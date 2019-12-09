@@ -10,7 +10,7 @@ public class PaginationSortParams {
         this.paginationOrder = paginationOrder;
     }
 
-    public static PaginationSortParams of(PaginationSortRepositoryParam paginationSortRepositoryParam, PaginationOrder paginationOrder) {
+    public static PaginationSortParams instanceOf(PaginationSortRepositoryParam paginationSortRepositoryParam, PaginationOrder paginationOrder) {
         return new PaginationSortParams(paginationSortRepositoryParam, paginationOrder);
     }
 

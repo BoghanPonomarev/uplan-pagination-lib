@@ -10,7 +10,7 @@ public class StaticPaginationParams {
         this.paginationSortParams = paginationSortParams;
     }
 
-    public StaticPaginationParams of(Integer size, PaginationSortParams paginationSortParams) {
+    public static StaticPaginationParams instanceOf(Integer size, PaginationSortParams paginationSortParams) {
         return new StaticPaginationParams(size, paginationSortParams);
     }
 
