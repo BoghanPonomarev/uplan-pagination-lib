@@ -12,4 +12,20 @@ public class PaginationEntitiesList<T extends Paginable> {
         this.sessionEntityTime = sessionEntityTime;
     }
 
+    public List<T> getEntityList() {
+        return entityList;
+    }
+
+    public void setEntityList(List<T> entityList) {
+        this.entityList = entityList;
+    }
+
+    public Long getSessionEntityTime() {
+        return sessionEntityTime;
+    }
+
+    public void setSessionEntityTime(Long sessionEntityTime) {
+        this.sessionEntityTime = sessionEntityTime;
+    }
+
 }
