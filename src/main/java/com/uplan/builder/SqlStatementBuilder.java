@@ -54,12 +54,14 @@ public class SqlStatementBuilder {
 
     private void appendAdditionalWhere(StringBuilder resultStatement, String additionalWhereStatement) {
         int whereIndex = resultStatement.indexOf(WHERE_STATEMENT);
-        if (whereIndex != NOT_EXISTING_INDEX && additionalWhereStatement != null && !additionalWhereStatement.isEmpty()) {
-            resultStatement.append(additionalWhereStatement + " AND ", whereIndex, whereIndex + additionalWhereStatement.length());
-        } else if (isShouldPreFillWithWhereCreating(resultStatement)) {
-            preFillWherePart(resultStatement, additionalWhereStatement);
-        } else {
-            appendIfNotNull(resultStatement, WHERE_STATEMENT + additionalWhereStatement);
+        if(additionalWhereStatement != null && !additionalWhereStatement.isEmpty()) {
+            if (whereIndex != NOT_EXISTING_INDEX) {
+                resultStatement.append(additionalWhereStatement + " AND ", whereIndex, whereIndex + additionalWhereStatement.length());
+            } else if (isShouldPreFillWithWhereCreating(resultStatement)) {
+                preFillWherePart(resultStatement, additionalWhereStatement);
+            } else {
+                appendIfNotNull(resultStatement, WHERE_STATEMENT + additionalWhereStatement);
+            }
         }
     }
 
